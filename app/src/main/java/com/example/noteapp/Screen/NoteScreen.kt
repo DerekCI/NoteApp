@@ -27,6 +27,7 @@ import com.example.noteapp.Components.NoteInputText
 import com.example.noteapp.Data.NotesDataSource
 import com.example.noteapp.Model.Note
 import com.example.noteapp.R
+import com.example.noteapp.util.formatDate
 import java.time.format.DateTimeFormatter
 
 
@@ -117,7 +118,7 @@ fun NoteRow(
         horizontalAlignment = Alignment.Start) {
             Text(text = note.title, style = MaterialTheme.typography.subtitle2)
             Text(text = note.description, style = MaterialTheme.typography.subtitle1)
-            Text(text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM")),
+            Text(text = formatDate(note.entryDate.time),
             style = MaterialTheme.typography.caption)
         }
     }
